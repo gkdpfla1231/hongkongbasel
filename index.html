@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>2026 홍콩 아트바젤 일정</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+:root {
+  --bg: #F7F4EF;
+  --white: #FFFFFF;
+  --black: #1A1A1A;
+  --gray: #888;
+  --line: #E2DDD6;
+  --gold: #B8965A;
+  --gold-bg: #FDF6E8;
+  --d1: #3B6E5A;
+  --d1-bg: #EBF4F0;
+  --d2: #3A5480;
+  --d2-bg: #EBF0F8;
+  --d3: #7A3B5A;
+  --d3-bg: #F8EBF3;
+  --red: #C0392B;
+  --red-bg: #FDEEEB;
+  --fs-xl: 22px;
+  --fs-lg: 18px;
+  --fs-md: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 13px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  line-height: 1.6;
+  padding-bottom: 100px;
+}
+
+/* ── HEADER ── */
+.hdr {
+  background: var(--black);
+  color: #fff;
+  padding: 28px 20px 24px;
+  text-align: center;
+}
+.hdr-badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  padding: 4px 14px;
+  margin-bottom: 14px;
+}
+.hdr h1 {
+  font-size: var(--fs-xl);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.hdr-sub {
+  font-size: var(--fs-sm);
+  color: #aaa;
+  margin-bottom: 20px;
+}
+.hdr-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: var(--fs-xs);
+  color: #ddd;
+  line-height: 1.4;
+}
+.chip b { color: #fff; display: block; font-size: var(--fs-md); }
+
+/* ── BOTTOM NAV ── */
+.bnav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--white);
+  border-top: 1.5px solid var(--line);
+  display: flex;
+  z-index: 200;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.10);
+}
+.bnav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 3px;
+  -webkit-tap-highlight-color: transparent;
+}
+.bnav-icon { font-size: 22px; line-height: 1; }
+.bnav-label { font-size: 11px; color: var(--gray); font-weight: 500; font-family: 'Noto Sans KR', sans-serif; }
+.bnav-btn.on .bnav-label { color: var(--gold); font-weight: 700; }
+.bnav-btn.on .bnav-icon { filter: drop-shadow(0 0 4px rgba(184,150,90,0.5)); }
+
+/* ── SECTIONS ── */
+.sec { display: none; }
+.sec.on { display: block; }
+
+/* ── CONTENT WRAP ── */
+.wrap { padding: 0 16px; }
+
+/* ── ALERT BOX ── */
+.alert {
+  background: var(--red-bg);
+  border-left: 4px solid var(--red);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  margin: 16px 16px 0;
+  font-size: var(--fs-sm);
+  color: var(--red);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.alert-title { font-size: var(--fs-md); font-weight: 700; margin-bottom: 4px; }
+
+.tip {
+  background: var(--gold-bg);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  margin: 12px 16px 0;
+  font-size: var(--fs-sm);
+  color: #6B4A00;
+  line-height: 1.7;
+}
+
+/* ── DAY CARDS (overview) ── */
+.ov-day {
+  background: var(--white);
+  border-radius: 16px;
+  margin: 12px 16px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.ov-day-hdr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+.ov-day-badge {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.d1 .ov-day-badge { background: var(--d1-bg); }
+.d2 .ov-day-badge { background: var(--d2-bg); }
+.d3 .ov-day-badge { background: var(--d3-bg); }
+.ov-day-info { flex: 1; }
+.ov-day-num { font-size: 11px; letter-spacing: 1px; color: var(--gray); font-weight: 700; }
+.d1 .ov-day-num { color: var(--d1); }
+.d2 .ov-day-num { color: var(--d2); }
+.d3 .ov-day-num { color: var(--d3); }
+.ov-day-title { font-size: var(--fs-md); font-weight: 700; }
+.ov-day-date { font-size: var(--fs-xs); color: var(--gray); }
+.ov-items { padding: 0 16px 14px; }
+.ov-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+}
+.ov-time { color: var(--gray); font-size: var(--fs-xs); min-width: 40px; padding-top: 1px; flex-shrink: 0; }
+.ov-text { flex: 1; line-height: 1.5; }
+.ov-icon { font-size: 16px; flex-shrink: 0; }
+
+/* ── SECTION TITLE ── */
+.sec-title {
+  font-size: var(--fs-lg);
+  font-weight: 900;
+  padding: 20px 16px 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── TIMELINE ── */
+.tl { padding: 8px 16px 0; position: relative; }
+.tl-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 4px;
+  position: relative;
+}
+.tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+  flex-shrink: 0;
+}
+.tl-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray);
+  white-space: nowrap;
+  line-height: 1.4;
+  text-align: center;
+}
+.tl-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin: 6px 0 0;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(184,150,90,0.2);
+}
+.tl-line {
+  width: 2px;
+  flex: 1;
+  background: var(--line);
+  margin-top: 4px;
+  min-height: 20px;
+}
+.tl-right { flex: 1; padding-bottom: 12px; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-top: 6px;
+  border-left: 4px solid var(--line);
+}
+.card.move {
+  background: #FAFAF8;
+  border-left-color: var(--line);
+  box-shadow: none;
+  padding: 10px 16px;
+}
+.card.meal { border-left-color: #D4814A; }
+.card.art  { border-left-color: var(--d2); }
+.card.hotel { border-left-color: var(--gold); }
+.card.fly   { border-left-color: #6A5ACD; background: #F5F3FF; }
+.card.event { border-left-color: #A03070; }
+.card.shop  { border-left-color: #3A8A8A; }
+.card.spa   { border-left-color: #5A8A5A; }
+.card.warn  { border-left-color: var(--red); background: var(--red-bg); }
+.card.star  { border-left-color: var(--gold); background: var(--gold-bg); }
+
+.card-tag {
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+.card-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.card-sub {
+  font-size: var(--fs-sm);
+  color: #555;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.card-detail {
+  font-size: var(--fs-xs);
+  color: var(--gray);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.badge {
+  display: inline-block;
+  background: #FFF3CD;
+  color: #856404;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 6px;
+}
+.badge.red { background: var(--red-bg); color: var(--red); }
+.badge.green { background: #E8F5E9; color: #2E7D32; }
+.badge.blue { background: #E3F2FD; color: #1565C0; }
+.badge.purple { background: #F3E5F5; color: #6A1B9A; }
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: var(--fs-xs);
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+}
+
+/* gallery list in card */
+.glist { list-style: none; margin-top: 8px; }
+.glist li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 8px;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  align-items: flex-start;
+}
+.glist li:last-child { border-bottom: none; }
+.gnum { font-size: 12px; color: var(--gray); min-width: 20px; flex-shrink: 0; font-weight: 700; padding-top: 1px; }
+.gname { font-weight: 700; }
+.gaddr { font-size: 12px; color: var(--gray); display: block; }
+
+/* ferry options */
+.ferry-opts { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.ferry-opt {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+}
+.ferry-name { font-size: var(--fs-sm); font-weight: 700; margin-bottom: 4px; }
+.ferry-desc { font-size: var(--fs-xs); color: #555; line-height: 1.6; }
+.price { font-size: var(--fs-sm); font-weight: 700; margin-top: 6px; }
+.price.cheap { color: #2E7D32; }
+.price.prem  { color: #A03000; }
+
+/* ── EXHIBIT CARDS ── */
+.ex-zone { font-size: 12px; letter-spacing: 2px; font-weight: 700; color: var(--gray); padding: 16px 16px 6px; }
+.ex-card {
+  background: var(--white);
+  border-radius: 14px;
+  margin: 0 16px 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 3px solid var(--gold);
+}
+.ex-card.kr { border-top-color: var(--d1); }
+.ex-venue { font-size: 11px; letter-spacing: 1px; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.ex-card.kr .ex-venue { color: var(--d1); }
+.ex-title { font-size: var(--fs-md); font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+.ex-desc { font-size: var(--fs-xs); color: #555; line-height: 1.7; }
+
+/* ── FLIGHT ── */
+.fl-group {
+  background: var(--white);
+  border-radius: 14px;
+  margin: 10px 16px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.fl-hdr {
+  background: var(--black);
+  color: #fff;
+  padding: 12px 16px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fl-people { font-size: var(--fs-xs); color: var(--gold); }
+.fl-row {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.fl-row:last-child { border-bottom: none; }
+.fl-label { font-size: 11px; letter-spacing: 1px; font-weight: 700; color: var(--gray); margin-bottom: 4px; }
+.fl-route { font-size: var(--fs-md); font-weight: 700; margin-bottom: 2px; }
+.fl-airline { font-size: var(--fs-xs); color: var(--gray); }
+.fl-price { font-size: var(--fs-sm); font-weight: 700; color: #2E7D32; margin-top: 4px; }
+
+/* ── HOTEL ── */
+.ht-card {
+  background: var(--white);
+  border-radius: 14px;
+  margin: 10px 16px 0;
+  padding: 18px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 3px solid var(--gold);
+}
+.ht-name { font-size: var(--fs-lg); font-weight: 900; margin-bottom: 4px; }
+.ht-addr { font-size: var(--fs-xs); color: var(--gray); margin-bottom: 14px; }
+.ht-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.ht-item { background: var(--bg); border-radius: 10px; padding: 10px; text-align: center; }
+.ht-lbl { font-size: 11px; color: var(--gray); display: block; margin-bottom: 2px; }
+.ht-val { font-size: var(--fs-sm); font-weight: 700; }
+
+/* ── BOTTOM SPACE ── */
+.bottom-space { height: 16px; }
+
+/* ── SCROLLBAR HIDE ── */
+::-webkit-scrollbar { width: 0; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-badge">ART BASEL HONG KONG 2026</div>
+  <h1>홍콩 아트바젤<br>출장 일정표</h1>
+  <div class="hdr-sub">2026년 3월 26일(목) — 3월 28일(토)</div>
+  <div class="hdr-chips">
+    <div class="chip">✈️ 출발 <b>3/26 (목) 08:10</b></div>
+    <div class="chip">🏨 숙소 <b>리걸 카오룽 호텔</b></div>
+    <div class="chip">💱 환율 <b>1 HKD = 190원</b></div>
+    <div class="chip">✈️ 귀국 <b>3/29 (일) 00:55</b></div>
+  </div>
+</div>
+
+<!-- ═══════════════ SECTION: 요약 ═══════════════ -->
+<div id="sec-home" class="sec on">
+
+
+
+  <div class="tip">
+    🍳 <b>2일차·3일차 호텔 조식</b>은 06:00–10:30이에요.<br>꼭 챙겨 드세요! 일정이 빠듯합니다.
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="ov-day d1">
+    <div class="ov-day-hdr">
+      <div class="ov-day-badge">🛬</div>
+      <div class="ov-day-info">
+        <div class="ov-day-num">DAY 1 · 도착일</div>
+        <div class="ov-day-title">3월 26일 (목)</div>
+        <div class="ov-day-date">갤러리 투어 + 저녁 스파이시크랩</div>
+      </div>
+    </div>
+    <div class="ov-items">
+      <div class="ov-item"><span class="ov-icon">✈️</span><span class="ov-time">08:10</span><span class="ov-text">인천공항 출발 → 홍콩 11:20 도착</span></div>
+      <div class="ov-item"><span class="ov-icon">🏨</span><span class="ov-time">12:40</span><span class="ov-text">리걸 카오룽 호텔 짐 맡기기 (체크인 2PM~)</span></div>
+      <div class="ov-item"><span class="ov-icon">🍜</span><span class="ov-time">13:05</span><span class="ov-text">점심 — New Big Light (비프 브리스킷 누들)</span></div>
+      <div class="ov-item"><span class="ov-icon">🖼</span><span class="ov-time">14:30</span><span class="ov-text">Central 갤러리 9곳 투어 + Asia Society</span></div>
+      <div class="ov-item"><span class="ov-icon">🦀</span><span class="ov-time">18:10</span><span class="ov-text">저녁 — 언더브릿지 스파이시크랩</span></div>
+      <div class="ov-item"><span class="ov-icon">🛍</span><span class="ov-time">20:00</span><span class="ov-text">K11 & K11 MUSEA 아트쇼핑몰</span></div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="ov-day d2">
+    <div class="ov-day-hdr">
+      <div class="ov-day-badge">🎨</div>
+      <div class="ov-day-info">
+        <div class="ov-day-num">DAY 2 · 아트바젤 본 관람</div>
+        <div class="ov-day-title">3월 27일 (금)</div>
+        <div class="ov-day-date">Christie's + Art Basel + 페리 + 저녁 Hutong</div>
+      </div>
+    </div>
+    <div class="ov-items">
+      <div class="ov-item"><span class="ov-icon">🍳</span><span class="ov-time">08:30</span><span class="ov-text">호텔 조식 (필수! 6:00–10:30)</span></div>
+      <div class="ov-item"><span class="ov-icon">🔨</span><span class="ov-time">09:30</span><span class="ov-text">Christie's 경매 프리뷰 관람</span></div>
+      <div class="ov-item"><span class="ov-icon">⭐</span><span class="ov-time">12:00</span><span class="ov-text">Art Basel HK 본 관람 (VIP 12시 / 일반 14시)</span></div>
+      <div class="ov-item"><span class="ov-icon">🔨</span><span class="ov-time">19:00</span><span class="ov-text">Christie's 이브닝 세일</span></div>
+      <div class="ov-item"><span class="ov-icon">⛴</span><span class="ov-time">19:45</span><span class="ov-text">페리 타고 침사추이로 (스타페리 or 크루즈)</span></div>
+      <div class="ov-item"><span class="ov-icon">🍽</span><span class="ov-time">20:20</span><span class="ov-text">저녁 — Hutong 레스토랑 (하버뷰)</span></div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="ov-day d3">
+    <div class="ov-day-hdr">
+      <div class="ov-day-badge">🏛</div>
+      <div class="ov-day-info">
+        <div class="ov-day-num">DAY 3 · 출발일</div>
+        <div class="ov-day-title">3월 28일 (토)</div>
+        <div class="ov-day-date">M+ 미술관 + Art Central + PMQ + 귀국</div>
+      </div>
+    </div>
+    <div class="ov-items">
+      <div class="ov-item"><span class="ov-icon">🍳</span><span class="ov-time">08:30</span><span class="ov-text">호텔 조식 후 체크아웃 (10:00)</span></div>
+      <div class="ov-item"><span class="ov-icon">🏛</span><span class="ov-time">10:00</span><span class="ov-text">M+ 미술관 — 이불 전시 (무료 입장!)</span></div>
+      <div class="ov-item"><span class="ov-icon">🍽</span><span class="ov-time">13:00</span><span class="ov-text">점심 — M+ 내부 다이닝</span></div>
+      <div class="ov-item"><span class="ov-icon">🎨</span><span class="ov-time">14:30</span><span class="ov-text">Art Central 소형 아트페어</span></div>
+      <div class="ov-item"><span class="ov-icon">🛍</span><span class="ov-time">16:00</span><span class="ov-text">PMQ 쇼핑 (로컬 디자이너 편집숍)</span></div>
+      <div class="ov-item"><span class="ov-icon">🍽</span><span class="ov-time">18:00</span><span class="ov-text">저녁 — The Chinese Library (Tai Kwun)</span></div>
+      <div class="ov-item"><span class="ov-icon">💆</span><span class="ov-time">19:50</span><span class="ov-text">발마사지 — moood massage (HKD 248)</span></div>
+      <div class="ov-item"><span class="ov-icon">✈️</span><span class="ov-time">00:55</span><span class="ov-text">홍콩 출발 → 인천 05:20 도착 <b style="color:var(--red)">(3/29 새벽)</b></span></div>
+    </div>
+  </div>
+
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- ═══════════════ SECTION: DAY 1 ═══════════════ -->
+<div id="sec-d1" class="sec">
+  <div class="sec-title" style="color:var(--d1)">🟢 1일차 &nbsp; 3월 26일 (목)</div>
+
+  <div class="tl">
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">08:10</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card fly">
+          <div class="card-tag">✈️ 출국</div>
+          <div class="card-title">인천공항 출발</div>
+          <div class="card-sub">대한항공 · 인천공항 제2터미널 (T2)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">11:20</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card fly">
+          <div class="card-tag">🛬 도착</div>
+          <div class="card-title">홍콩국제공항 도착</div>
+          <div class="card-sub">홍콩공항 제1터미널 (T1)</div>
+          <span class="badge green">🚌 공항 Counter B15에서 셔틀 탑승 (예약 불필요)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동</div>
+          <div class="card-detail">택시 약 33분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">12:40</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🏨 호텔</div>
+          <div class="card-title">리걸 카오룽 호텔 — 짐 맡기기</div>
+          <div class="card-detail">📍 71 Mody Rd, Tsim Sha Tsui East</div>
+          <span class="badge">⏰ 체크인은 오후 2시부터</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">13:05</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🍜 점심</div>
+          <div class="card-title">New Big Light</div>
+          <div class="card-sub">비프 브리스킷 누들 + 완탄 — 호텔 바로 옆!</div>
+          <div class="card-detail">📍 67 Mody Rd &nbsp;|&nbsp; 11:00–22:40</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">13:40</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🛎 체크인</div>
+          <div class="card-title">호텔 체크인</div>
+          <span class="badge">프론트에서 가능 여부 확인</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">14:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚇 이동 — 호텔 → Central</div>
+          <div class="card-detail">🚕 택시 20분 &nbsp;|&nbsp; 🚇 지하철 25분<br>(침사추이 → Tsuen Wan Line → 센트럴)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">14:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🖼 갤러리 투어 &nbsp; 운영: 11:00–19:00</div>
+          <div class="card-title">Central 갤러리 지구 — 10곳</div>
+          <ul class="glist">
+            <li><span class="gnum">①</span><div><span class="gname">White Cube</span><span class="gaddr">50 Connaught Rd Central</span></div></li>
+            <li><span class="gnum">②③④</span><div><span class="gname">PAVILION Hong Kong 2026<br>David Zwirner &nbsp;·&nbsp; Tang Contemporary</span><span class="gaddr">H Queen's Building</span></div></li>
+            <li><span class="gnum">⑤</span><div><span class="gname">Sotheby's Maison</span><span class="gaddr">Landmark Chater, 8 Connaught Rd (옥션 프리뷰)</span></div></li>
+            <li><span class="gnum">⑥</span><div><span class="gname">Gagosian</span><span class="gaddr">Pedder Building 7/F</span></div></li>
+            <li><span class="gnum">⑦</span><div><span class="gname">Hauser &amp; Wirth</span><span class="gaddr">8 Queen's Rd Central G/F</span></div></li>
+            <li><span class="gnum">⑧</span><div><span class="gname">Pearl Lam Galleries</span><span class="gaddr">Duddell St, Central</span></div></li>
+            <li><span class="gnum">⑨</span><div><span class="gname">Tai Kwun (복합문화지구)</span><span class="gaddr">10 Hollywood Rd &nbsp;|&nbsp; 08:00–23:00</span></div></li>
+            <li><span class="gnum">⑩</span><div><span class="gname">Villepin</span><span class="gaddr">53-55 Hollywood Rd &nbsp;|&nbsp; ⚠️ 목요일 14:00 오픈</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 갤러리 → Asia Society</div>
+          <div class="card-detail">🚕 택시 10분 &nbsp;|&nbsp; 🚇 지하철 25분 &nbsp;|&nbsp; 🚶 도보 30분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">17:10</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🏛 문화공간</div>
+          <div class="card-title">Asia Society Hong Kong</div>
+          <div class="card-sub">예술문화센터 공간 투어 · 무료 입장</div>
+          <div class="card-detail">📍 Admiralty &nbsp;|&nbsp; 11:00–18:00</div>
+          <div class="card-detail">전시: <b>Hung Hsien: Between Worlds</b><br>1933년생 홍현의 첫 회고전 — 동서양 융합 수묵화<br>열대우림 속 아름다운 오아시스 공간</div>
+          <span class="badge green">🆓 무료 입장</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — Asia Society → 저녁</div>
+          <div class="card-detail">🚕 택시 10분 &nbsp;|&nbsp; 🚇 지하철 20분 &nbsp;|&nbsp; 🚶 도보 25분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">18:10</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🦀 저녁식사</div>
+          <div class="card-title">언더브릿지 스파이시크랩</div>
+          <div class="card-sub">홍콩 명물 매콤한 게 요리</div>
+          <div class="card-detail">📍 Causeway Bay, Lockhart Rd 391 &nbsp;|&nbsp; 11:00–01:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 완차이 → 침사추이</div>
+          <div class="card-detail">🚕 택시 20분 &nbsp;|&nbsp; 🚇 지하철 30분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">20:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card shop">
+          <div class="card-tag">🛍 쇼핑·관람</div>
+          <div class="card-title">K11 &amp; K11 MUSEA</div>
+          <div class="card-sub">예술과 쇼핑이 함께 있는 공간</div>
+          <div class="card-detail">📍 K11: 18 Hanoi Rd, TST &nbsp;|&nbsp; 10:00–22:00<br>📍 K11 MUSEA: Salisbury Rd (Victoria Dockside)<br>쿠사마, Mary Weatherford 등 상설 전시</div>
+          <span class="badge red">⚠️ 페로탕 갤러리 임시 휴업 중</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- ═══════════════ SECTION: DAY 2 ═══════════════ -->
+<div id="sec-d2" class="sec">
+  <div class="sec-title" style="color:var(--d2)">🔵 2일차 &nbsp; 3월 27일 (금)</div>
+
+  <div class="tl">
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">08:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🍳 호텔 조식</div>
+          <div class="card-title">리걸 카오룽 호텔 조식</div>
+          <span class="badge red">⏰ 06:00–10:30 &nbsp; 꼭 드세요!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">09:10</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 호텔 → Christie's</div>
+          <div class="card-detail">🚕 택시 20분 &nbsp;|&nbsp; 🚇 지하철 25분 &nbsp;|&nbsp; 🚃 트램 가능</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">09:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🔨 옥션 프리뷰</div>
+          <div class="card-title">Christie's 경매 프리뷰 관람</div>
+          <div class="card-sub">20th/21st Century Evening &amp; Day Sale</div>
+          <div class="card-detail">📍 6/F, The Henderson, 2 Murray Rd, Central<br>⏰ 09:30–18:00 (관람 10:30–17:30)</div>
+          <span class="badge red">⚠️ 토·일 휴무</span>
+          <span class="badge purple">🌙 저녁 이브닝 세일: 오후 7시</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">11:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — Christie's → 아트바젤</div>
+          <div class="card-detail">🚕 택시 5분 &nbsp;|&nbsp; 🚇 지하철 20분 &nbsp;|&nbsp; 🚶 도보 20분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card star">
+          <div class="card-tag">⭐ 메인 이벤트</div>
+          <div class="card-title">Art Basel Hong Kong 2026</div>
+          <div class="card-sub">+ 서울옥션 프리뷰 (그랜드 하얏트 살롱)</div>
+          <div class="card-detail">📍 Convention &amp; Exhibition Centre<br>1 Harbour Rd, Wan Chai</div>
+          <span class="badge purple">VIP: 12:00–14:00</span>
+          <span class="badge blue" style="margin-left:4px">일반: 14:00–20:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time" style="font-size:11px">점심</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🍽 점심</div>
+          <div class="card-title">바젤 내부 식당에서 해결</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">18:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 아트바젤 → Christie's</div>
+          <div class="card-detail">🚕 택시 5분 &nbsp;|&nbsp; 🚶 도보 20분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card event">
+          <div class="card-tag">🔨 이브닝 세일</div>
+          <div class="card-title">Christie's 이브닝 옥션 세일</div>
+          <div class="card-detail">📍 6/F, The Henderson, 2 Murray Road, Central</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 센트럴 → 침사추이</div>
+          <div class="card-detail">🚕 택시 5분 후 도보 15분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:45</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">⛴ 이동 방법 선택</div>
+          <div class="card-title">페리 타고 침사추이로!</div>
+          <div style="background:var(--bg); border-radius:10px; padding:12px 14px; border:1px solid var(--line); margin-top:10px;">
+            <div class="ferry-name">⛴ 스타페리 (추천!)</div>
+            <div class="ferry-desc">Central Pier 9 → TST Star Ferry<br>약 15분 / 6–8분마다 출발</div>
+            <div class="price cheap">💚 성인 HKD 5 (약 1,000원)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">20:20</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🍽 저녁식사</div>
+          <div class="card-title">Hutong</div>
+          <div class="card-sub">고급 중국 요리 — 하버뷰 레스토랑</div>
+          <div class="card-detail">📍 H Zentre 18/F, 15 Middle Rd, Tsim Sha Tsui<br>⏰ 12:00–24:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">22:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚶 이동 — 저녁 → 호텔</div>
+          <div class="card-detail">🚶 도보 약 10분</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- ═══════════════ SECTION: DAY 3 ═══════════════ -->
+<div id="sec-d3" class="sec">
+  <div class="sec-title" style="color:var(--d3)">🟣 3일차 &nbsp; 3월 28일 (토)</div>
+
+  <div class="alert">
+    <div class="alert-title">⚠️ 오늘 밤 귀국 — A팀</div>
+    오늘 밤 자정(00:55) 출발이에요!<br>늦어도 <b>밤 10시</b>엔 공항 도착해야 합니다.
+  </div>
+
+  <div class="tl" style="margin-top:12px">
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">08:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🍳 조식 &amp; 체크아웃</div>
+          <div class="card-title">호텔 조식 후 체크아웃</div>
+          <div class="card-detail">체크아웃: 10:00 &nbsp;|&nbsp; 짐은 프론트에 보관</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time" style="font-size:11px">이동</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 호텔 → 서구룡 문화지구</div>
+          <div class="card-detail">🚕 택시 10분 &nbsp;|&nbsp; 🚇 지하철 27분<br>⚠️ 아트파크 버스는 토요일 운행 없음!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">10:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🏛 미술관</div>
+          <div class="card-title">M+ 미술관</div>
+          <div class="card-sub">이불 회고전 &amp; Rauschenberg and Asia</div>
+          <div class="card-detail">📍 West Kowloon Cultural District<br>⏰ 10:00–18:00</div>
+          <span class="badge green">🎟 Art March 기간 무료 입장!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time" style="font-size:11px">Phillips</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🔨 옥션 프리뷰</div>
+          <div class="card-title">Phillips 프리뷰</div>
+          <div class="card-sub">Modern &amp; Contemporary Art Sale</div>
+          <div class="card-detail">📍 G/F, WKCDA Tower, 8 Austin Rd West<br>옥션 본행사: 3월 29일(일) 오후 5시</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">13:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🍽 점심</div>
+          <div class="card-title">M+ 내부 다이닝</div>
+          <div class="card-detail">📍 M+ 미술관 내 레스토랑</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">14:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — M+ → Art Central</div>
+          <div class="card-detail">🚕 택시 9분 &nbsp;|&nbsp; 🚇 지하철 29분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">14:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card art">
+          <div class="card-tag">🎨 아트페어</div>
+          <div class="card-title">Art Central</div>
+          <div class="card-sub">소규모 아트페어 — 신진 작가 중심</div>
+          <div class="card-detail">📍 9 Lung Wo Rd, Central</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">15:40</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — Art Central → PMQ</div>
+          <div class="card-detail">🚕 택시 15분 &nbsp;|&nbsp; 🚶 도보 15분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">16:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card shop">
+          <div class="card-tag">🛍 쇼핑</div>
+          <div class="card-title">PMQ</div>
+          <div class="card-sub">홍콩 대표 문화 랜드마크 — 로컬 편집숍</div>
+          <div class="card-detail">📍 35 Aberdeen St, Central &nbsp;|&nbsp; 07:00–23:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">17:45</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚶 이동 — PMQ → 저녁</div>
+          <div class="card-detail">🚶 도보 약 5분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card meal">
+          <div class="card-tag">🍽 저녁식사</div>
+          <div class="card-title">The Chinese Library</div>
+          <div class="card-sub">Tai Kwun 내 고급 중국 요리 — 분위기 최고!</div>
+          <div class="card-detail">📍 Block 01, Tai Kwun, 10 Hollywood Rd, Central<br>⏰ 런치 12:00–15:00 &nbsp;|&nbsp; 디너 18:00–24:00</div>
+          <span class="badge">🦆 베이징 덕 사전 예약 강력 추천!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:30</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 저녁 → 발마사지</div>
+          <div class="card-detail">🚕 택시 20분 &nbsp;|&nbsp; 🚶 도보 22분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">19:50</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card spa">
+          <div class="card-tag">💆 발마사지</div>
+          <div class="card-title">moood massage</div>
+          <div class="card-sub">출장 마지막 피로를 여기서 푸세요!</div>
+          <div class="card-detail">📍 G/F, 54 Kimberley Rd, TST (침사추이역 B출구)<br>⏰ 11:00–22:30 &nbsp;|&nbsp; 💰 HKD 248 (약 47,000원)<br>📞 (+852) 56016633</div>
+          <span class="badge">WhatsApp 예약 권장</span>
+          <br><a href="https://mooodmassage.hk" class="card-link" target="_blank">홈페이지 바로가기 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">20:40</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 마사지 → 호텔 짐 픽업</div>
+          <div class="card-detail">🚕 택시 5분 &nbsp;|&nbsp; 🚶 도보 10분</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">20:50</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🧳 짐 픽업</div>
+          <div class="card-title">리걸 카오룽 호텔 짐 찾기</div>
+          <div class="card-detail">📍 71 Mody Rd, Tsim Sha Tsui East</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">21:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card move">
+          <div class="card-tag">🚕 이동 — 호텔 → 공항</div>
+          <div class="card-detail">🚕 택시 약 30분<br>🚇 지하철(공항선) 약 51분<br>🚌 호텔 셔틀버스 약 1시간</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">22:00</div><div class="tl-dot"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card hotel">
+          <div class="card-tag">🏁 공항 도착</div>
+          <div class="card-title">홍콩국제공항 T1 도착</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">00:55</div><div class="tl-dot" style="background:var(--d3)"></div><div class="tl-line"></div></div>
+      <div class="tl-right">
+        <div class="card fly">
+          <div class="card-tag">✈️ 귀국 출발</div>
+          <div class="card-title">홍콩 → 인천</div>
+          <div class="card-sub">대한항공 · 홍콩공항 T1</div>
+          <span class="badge red">3월 28일 밤 → 29일 새벽 자정 출발!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-left"><div class="tl-time">05:20</div><div class="tl-dot"></div></div>
+      <div class="tl-right">
+        <div class="card fly">
+          <div class="card-tag">🛬 인천 도착</div>
+          <div class="card-title">인천공항 도착 — 3월 29일 (일)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- ═══════════════ SECTION: 전시 ═══════════════ -->
+<div id="sec-ex" class="sec">
+
+  <div class="ex-zone">📍 홍콩섬 — Central Gallery District</div>
+
+  <div class="ex-card">
+    <div class="ex-venue">WHITE CUBE</div>
+    <div class="ex-title">El Anatsui</div>
+    <div class="ex-desc">가나 출신 조각가. 수천 개의 금속 병뚜껑을 연결해 직물처럼 보이는 대형 조각. 버려진 물질의 변형과 글로벌 소비 문화를 탐구합니다.</div>
+    <a href="https://www.whitecube.com/exhibitions/hong-kong" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">DAVID ZWIRNER</div>
+    <div class="ex-title">Walter Price — Pearl Lines</div>
+    <div class="ex-desc">구상과 추상의 경계를 자유롭게 넘나드는 강렬한 색감의 회화. Price의 아시아 첫 개인전!</div>
+    <a href="https://www.davidzwirner.com/exhibitions/2026/walter-price-pearl-lines" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">TANG CONTEMPORARY</div>
+    <div class="ex-title">Yue Minjun — Crab</div>
+    <div class="ex-desc">과장된 웃는 얼굴로 유명한 위에민쥔의 30년 회고전. 피카소의 게르니카에 응답한 작품도 포함됩니다.</div>
+    <a href="https://www.tangcontemporary.com/2026-yue-minjun-crab" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">SOTHEBY'S MAISON</div>
+    <div class="ex-title">Modern &amp; Contemporary — 옥션 프리뷰</div>
+    <div class="ex-desc">소더비 이브닝·데이 세일 사전 작품 프리뷰 관람.</div>
+    <a href="https://www.sothebys.com/en/buy/auction/2026/modern-contemporary-evening-auction" class="card-link" target="_blank">소더비 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">GAGOSIAN</div>
+    <div class="ex-title">Mary Weatherford — Persephone</div>
+    <div class="ex-desc">아시아 첫 개인전. 그리스 신화 페르세포네를 통해 계절의 순환 탐구. 네온 튜브와 조개껍데기를 결합한 독창적인 회화입니다.</div>
+    <a href="https://gagosian.com/exhibitions/2026/mary-weatherford-persephone/" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">HAUSER &amp; WIRTH</div>
+    <div class="ex-title">Nicole Eisenman — Fallen Angels</div>
+    <div class="ex-desc">집·일터·해변이라는 중산층 일상 공간 속 불안과 정지된 시간을 담은 회화 11점·조각 3점. 왕가위 영화 《타락천사》를 연상시키는 차분하고 강렬한 분위기.</div>
+    <a href="https://www.hauserwirth.com/hauser-wirth-exhibitions/nicole-eisenman-fallen-angels/" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">PEARL LAM GALLERIES</div>
+    <div class="ex-title">Qiu Anxiong — Bearing the Unseen</div>
+    <div class="ex-desc">AI 시대 인간·자연·기계의 관계를 탐구. 수묵화+애니메이션+영상 설치. 인간 중심주의를 해체하는 철학적 전시.</div>
+    <a href="https://www.pearllam.com/exhibition/qiu-anxiong-bearing-the-unseen/" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">VILLEPIN</div>
+    <div class="ex-title">Ted Gahl — Roam</div>
+    <div class="ex-desc">갤러리 오픈 초창기부터 함께해온 작가의 첫 개인전. Arthur de Villepin이 직접 헌정하는 특별한 전시.</div>
+    <a href="https://www.villepinart.com/ted-gahl-roam" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">ASIA SOCIETY &nbsp;🆓 무료</div>
+    <div class="ex-title">Hung Hsien — Between Worlds</div>
+    <div class="ex-desc">1933년생 홍현(Margaret Chang)의 첫 회고전. 70년 이상의 수묵화 여정. 동서양을 융합한 독자적인 현대 수묵화 언어를 개척한 작가. 하버드·스미소니언 소장 — 뒤늦은 재조명!</div>
+    <a href="https://asiasociety.org/hong-kong/exhibitions/hung-hsien-between-worlds" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-zone">📍 서구룡 문화지구 — M+ Museum</div>
+
+  <div class="ex-card kr">
+    <div class="ex-venue">M+ MUSEUM &nbsp;🇰🇷 한국 작가</div>
+    <div class="ex-title">Lee Bul: From 1998 to Now</div>
+    <div class="ex-desc">한국 대표 현대미술가 이불의 대규모 회고전. Cyborg, Anagram 등 주요 시리즈 200여 점. 인간·기술·유토피아의 이상과 실패를 탐구합니다. Art March 기간 무료 입장!</div>
+    <a href="https://www.mplus.org.hk/en/exhibitions/lee-bul-from-1998-to-now/" class="card-link" target="_blank">전시 링크 →</a>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">M+ MUSEUM</div>
+    <div class="ex-title">Ryuichi Sakamoto | Seeing Sound, Hearing Time</div>
+    <div class="ex-desc">사카모토 류이치의 몰입형 사운드·영상 전시. 음악을 3차원 공간으로 경험하는 특별한 설치 작품.</div>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">M+ MUSEUM</div>
+    <div class="ex-title">Shanshui: Echoes and Signals</div>
+    <div class="ex-desc">동아시아 전통 산수 개념을 현대적으로 재해석. 자연과 도시·디지털 환경 속 인간의 관계를 탐구합니다.</div>
+  </div>
+
+  <div class="ex-card">
+    <div class="ex-venue">M+ MUSEUM</div>
+    <div class="ex-title">Robert Rauschenberg and Asia</div>
+    <div class="ex-desc">라우센버그가 아시아 여행·협업을 통해 제작한 작품들. ROCI 국제 예술 교류 프로젝트 조명.</div>
+  </div>
+
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- ═══════════════ SECTION: 항공·숙소 ═══════════════ -->
+<div id="sec-info" class="sec">
+
+  <div class="sec-title">✈️ 항공편</div>
+
+  <div class="fl-group">
+    <div class="fl-hdr">항공편</div>
+    <div class="fl-row">
+      <div class="fl-label">✈️ 출국</div>
+      <div class="fl-route">인천 → 홍콩 &nbsp; 03/26 08:10–11:20</div>
+      <div class="fl-airline">대한항공 (KE2001) · 인천공항 T2</div>
+      <div class="fl-price">약 78만원 / 1인</div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-label">🛬 귀국</div>
+      <div class="fl-route">홍콩 → 인천 &nbsp; 03/29 00:55–05:20</div>
+      <div class="fl-airline">대한항공 (KE2012) · 홍콩공항 T1</div>
+      <span class="badge red">⚠️ 3/28 밤 → 3/29 새벽 자정 출발!</span>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:8px">🏨 숙소</div>
+
+  <div class="ht-card">
+    <div class="ht-name">Regal Kowloon Hotel</div>
+    <div class="ht-addr">📍 71 Mody Rd, Tsim Sha Tsui East, 홍콩</div>
+    <div class="ht-grid">
+      <div class="ht-item"><span class="ht-lbl">체크인</span><span class="ht-val">오후 2:00~</span></div>
+      <div class="ht-item"><span class="ht-lbl">체크아웃</span><span class="ht-val">오전 10:00</span></div>
+      <div class="ht-item"><span class="ht-lbl">조식 시간</span><span class="ht-val">06:00–10:30</span></div>
+    </div>
+    <div class="tip" style="margin:0">
+      🚌 <b>공항 셔틀버스:</b> 예약 불필요 — 공항 <b>Counter B15</b>에서 바로 탑승<br>
+      시간표: <a href="http://shuttle.regalhotel.com" target="_blank" style="color:var(--gold);font-weight:700">shuttle.regalhotel.com</a>
+    </div>
+    <div class="tip" style="margin:10px 0 0">
+      ✈️ <b>귀국 비행기:</b> 홍콩 출발 <b>00:55</b> (3/29 새벽)<br>
+      늦어도 밤 <b>10시</b>엔 공항 도착해야 해요!
+    </div>
+    <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://www.regalhotel.com/regal-kowloon-hotel/en/home/home.html" class="card-link" target="_blank">호텔 홈페이지 →</a>
+      <a href="https://maps.app.goo.gl/x1i4tKoBpUdNk1or8" class="card-link" target="_blank">구글맵 →</a>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:8px">💱 환율 참고</div>
+  <div class="wrap">
+    <div class="card" style="border-left-color:var(--gold); background:var(--gold-bg); margin-top:8px">
+      <div class="card-title" style="font-size:var(--fs-lg)">1 HKD ≈ 190원</div>
+      <div class="card-detail" style="font-size:var(--fs-sm); margin-top:6px">
+        HKD 50 → 약 9,500원<br>
+        HKD 100 → 약 19,000원<br>
+        HKD 200 → 약 38,000원
+      </div>
+      <div class="card-detail" style="margin-top:6px; color:var(--gray)">2026년 3월 17일 기준</div>
+    </div>
+  </div>
+
+  <div class="bottom-space"></div>
+</div>
+
+
+<!-- BOTTOM NAV -->
+<nav class="bnav">
+  <button class="bnav-btn on" onclick="show('home',this)">
+    <span class="bnav-icon">📋</span>
+    <span class="bnav-label">전체 요약</span>
+  </button>
+  <button class="bnav-btn" onclick="show('d1',this)">
+    <span class="bnav-icon">🟢</span>
+    <span class="bnav-label">1일차 3/26</span>
+  </button>
+  <button class="bnav-btn" onclick="show('d2',this)">
+    <span class="bnav-icon">🔵</span>
+    <span class="bnav-label">2일차 3/27</span>
+  </button>
+  <button class="bnav-btn" onclick="show('d3',this)">
+    <span class="bnav-icon">🟣</span>
+    <span class="bnav-label">3일차 3/28</span>
+  </button>
+  <button class="bnav-btn" onclick="show('ex',this)">
+    <span class="bnav-icon">🎨</span>
+    <span class="bnav-label">전시 정보</span>
+  </button>
+  <button class="bnav-btn" onclick="show('info',this)">
+    <span class="bnav-icon">✈️</span>
+    <span class="bnav-label">항공·숙소</span>
+  </button>
+</nav>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('sec-' + id).classList.add('on');
+  btn.classList.add('on');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
